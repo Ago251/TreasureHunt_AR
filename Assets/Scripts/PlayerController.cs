@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
@@ -10,7 +9,6 @@ public class PlayerController : MonoBehaviour {
 
     private GameObject spawnedObject;
     private ARRaycastManager arRaycastManager;
-    [SerializeField] private LineRenderer lineRenderer;
     private Touch touch;
     [SerializeField] private float force;
     [SerializeField] private GameObject placeIndicator;
@@ -51,7 +49,7 @@ public class PlayerController : MonoBehaviour {
                     }
                 }
             }
-            else {
+            else{
                 Ray ray = Camera.main.ScreenPointToRay(touch.position);
                 if (Physics.Raycast(ray, out RaycastHit hit)) {
                     switch (hit.collider.gameObject.tag) {
